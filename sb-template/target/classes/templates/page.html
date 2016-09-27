@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>hello</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<!-- 数据显示 -->
+	
+	<!-- th:each属性用于迭代循环，语法：th:each="obj,iterStat:${objList}"
+    index:当前迭代对象的index（从0开始计算）
+    count: 当前迭代对象的index(从1开始计算)
+    size:被迭代对象的大小
+    current:当前迭代变量
+    even/odd:布尔值，当前循环是否是偶数/奇数（从0开始计算）
+    first:布尔值，当前循环是否是第一个
+    last:布尔值，当前循环是否是最后一个 -->
+
+	<p style="color: red">单个对象</p>
+	<p th:text="|Id: ${userModel.id}|">12</p>
+	<p th:text="|Name: ${userModel.userName}|">decamincow</p>
+	<p th:text="|Age: ${userModel.userAge}|">29</p>
+
+	<p style="color: red">数字数组</p>
+	<p th:text="|1: ${score[0]}|">1</p>
+	<p th:text="|2: ${score[1]}|">2</p>
+	<p th:text="|3: ${score[2]}|">3</p>
+	<p th:text="|4: ${score[3]}|">4</p>
+	<p th:text="|5: ${score[4]}|">5</p>
+	<li th:each="item, itemStat : ${score}"
+		th:text="|${itemStat.count}: ${item}|"></li>
+
+	<p style="color: red">map</p>
+	<p th:text="|key1: ${map.key1}|">key1</p>
+	<p th:text="|key2: ${map.key2}|">key2</p>
+	<p th:text="|key3: ${map.key3}|">key3</p>
+	<li th:each="map: ${map}" th:text="${map}"></li>
+
+	<p style="color: red">对象数组</p>
+	<tr th:each="user,userStat : ${userList}">
+		<td th:text="|UserId: ${user.id}|"></td>
+		<td th:text="|UserName: ${user.userName}|"></td>
+		<td th:text="|UserAge: ${user.userAge}|"></td>
+	</tr>
+	<li th:each="user : ${userList}" th:text="${user.userName}"></li>
+
+
+	<!-- 表单 -->
+	<p style="color: red">提交表单</p>
+	<form action="#" th:action="@{/decamincow/delete}" th:object="${userModel}"
+		method="post">
+		<p>
+			id: <input type="text" th:field="*{id}" />
+		</p>
+		<p>
+			name: <input type="text" th:field="*{userName}" />
+		</p>
+		<p>
+			userage: <input type="text" th:field="*{userAge}" />
+		</p>
+		<p>
+			<input type="submit" value="Submit" /> <input type="reset"
+				value="Reset" />
+		</p>
+	</form>
+	
+	<!-- url -->
+	<a th:href="@{http://www.thymeleaf.org/}">thymeleaf模板官网</a>
+	<br />
+	<a th:href="@{page}">相对路径</a>
+	<br />
+	<a th:href="@{/js/bootstrap.min.js}">默认访问static文件夹</a>
+
+	<!-- 逻辑 -->
+	<p th:if="${20 lt 100}">Special offer!</p>
+
+	<td th:switch="${userModel.userName}">
+	<span th:case="decamincow">cool</span> 
+	<span th:case="'decamincow2'">cool2</span>
+	<span th:case="*">cool3</span>
+	</td>
+
+</body>
+</html>

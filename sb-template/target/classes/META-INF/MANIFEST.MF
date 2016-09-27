@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: sb-template
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: decamincow
+Implementation-Vendor-Id: com.demo.springboot
+Build-Jdk: 1.8.0_74
+Implementation-URL: http://sb-template
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

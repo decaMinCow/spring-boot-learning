@@ -1,0 +1,10 @@
+# DataSource
+spring:
+  datasource:
+    url: jdbc:mysql://*****/springmvc?useUnicode=yes&characterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: decamincow
+    password: '****'
+    
+mybatis:
+  config-location: classpath:/mybatis.xml

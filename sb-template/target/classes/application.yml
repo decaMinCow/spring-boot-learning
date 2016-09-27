@@ -1,0 +1,11 @@
+#thymeleaf
+spring:
+  thymeleaf:
+    #cache 调试页面无缓存，可刷新
+    cache: false
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html; charset=utf-8
+    #default 前后缀为默认值可以不填
+    prefix: classpath:/templates/
+    suffix: .html
