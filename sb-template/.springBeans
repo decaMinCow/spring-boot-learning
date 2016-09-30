@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:com.demo.springboot.template.Application</config>
+		<config>java:com.demo.springboot.configuration.Application</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

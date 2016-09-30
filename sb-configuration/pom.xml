@@ -3,18 +3,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.demo.springboot</groupId>
-	<artifactId>sb-parent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
-
-	<name>sb-parent</name>
-	<url>http://maven.apache.org</url>
+	<artifactId>sb-configuration</artifactId>
+	<packaging>jar</packaging>
+	<name>sb-configuration</name>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.0.RELEASE</version>
+		<groupId>com.demo.springboot</groupId>
+		<artifactId>sb-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../sb-parent/pom.xml</relativePath>
 	</parent>
 
 	<properties>
@@ -26,27 +23,21 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-		<!-- Server -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jetty</artifactId>
-		</dependency>
-		<!-- Test -->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
 
-	<!-- multiple Module -->
-	<modules>
-		<module>../sb-mybatis</module>
-		<module>../sb-template</module>
-		<module>../sb-configuration</module>
-	</modules>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -56,4 +47,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
 </project>
